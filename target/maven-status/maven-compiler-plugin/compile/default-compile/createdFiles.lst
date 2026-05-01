@@ -1,0 +1,8 @@
+com\stockmonitor\config\ConfigLoader.class
+com\stockmonitor\MainRunner.class
+com\stockmonitor\service\StockChecker.class
+com\stockmonitor\util\CsvUtil.class
+com\stockmonitor\service\TelegramService.class
+com\stockmonitor\service\MonitorService.class
+com\stockmonitor\factory\PlaywrightFactory.class
+com\stockmonitor\model\Product.class
