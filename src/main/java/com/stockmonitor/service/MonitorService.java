@@ -23,7 +23,20 @@ public class MonitorService {
             executor.shutdown();
             executor.awaitTermination(5, TimeUnit.MINUTES);
 
-            CsvUtil.write(products);
+            boolean updated = false;
+
+for (Product p : products) {
+    String newStatus = ...;
+
+    if (!newStatus.equals(p.getLastStatus())) {
+        p.setLastStatus(newStatus);
+        updated = true;
+    }
+}
+
+if (updated) {
+    CsvUtil.write(products);
+}
 
             Thread.sleep(120000);
         }
