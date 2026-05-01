@@ -53,7 +53,12 @@ public class MonitorService {
             TelegramService.send("🔥 BACK IN STOCK\n" + product.getName());
         }
 
-        product.setLastStatus(inStock ? "IN" : "OUT");
+        String newStatus = inStock ? "IN" : "OUT";
+
+if (!newStatus.equals(product.getLastStatus())) {
+    System.out.println("✏️ Updating CSV status: " + product.getLastStatus() + " → " + newStatus);
+    product.setLastStatus(newStatus);
+}
 
         Thread.sleep(2000);
 
